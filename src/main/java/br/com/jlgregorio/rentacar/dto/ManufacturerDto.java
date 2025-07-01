@@ -9,6 +9,4 @@ public class ManufacturerDto{
     private long id;
     private String name;
     private String country;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
