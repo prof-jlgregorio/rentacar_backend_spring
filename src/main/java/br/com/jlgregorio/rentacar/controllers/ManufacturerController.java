@@ -51,7 +51,7 @@ public class ManufacturerController {
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping
+    @GetMapping("/find")
     public ResponseEntity<List<ManufacturerDto>> find(
             @RequestParam(name = "name", required = false) String name
     ){

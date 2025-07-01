@@ -44,6 +44,11 @@ public class VehicleService {
         vehicleRepository.delete(vehicleModel);
     }
 
+    public List<VehicleDto> findAll(){
+        var vehicles = vehicleRepository.findAll();
+        return CustomModelMapper.parseObjectList(vehicles, VehicleDto.class);
+    }
+
     public List<VehicleDto> findByName(String name){
         var vehicles = vehicleRepository.findByNameContainsIgnoreCaseOrderByName(name);
         return CustomModelMapper.parseObjectList(vehicles, VehicleDto.class);
