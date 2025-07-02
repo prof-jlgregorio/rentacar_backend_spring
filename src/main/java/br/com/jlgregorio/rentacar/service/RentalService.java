@@ -8,7 +8,6 @@ import br.com.jlgregorio.rentacar.model.RentalModel;
 import br.com.jlgregorio.rentacar.model.VehicleModel;
 import br.com.jlgregorio.rentacar.repository.RentalRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 
@@ -31,8 +30,8 @@ public class RentalService {
     public RentalDto update(RentalDto rentalDto){
         RentalModel model = rentalRepository.findById(rentalDto.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Aluguel não encontrado!"));
-        model.setBegin(rentalDto.getBegin());
-        model.setEnd(rentalDto.getEnd());
+        model.setRentalStart(rentalDto.getRentalStart());
+        model.setRentalEnd(rentalDto.getRentalEnd());
         model.setCustomer(CustomModelMapper.parseObject(rentalDto.getCustomer(), CustomerModel.class));
         model.setObservations(rentalDto.getObservations());
         model.setEndKm(rentalDto.getEndKm());

@@ -11,8 +11,10 @@ spring:
     password: postdba
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
+  flyway:
+    enabled: false
 springdoc:
   api-docs:
     path: /docs
@@ -20,4 +22,3 @@ springdoc:
   swagger-ui:
     use-root-path: true
     path: /swagger
-

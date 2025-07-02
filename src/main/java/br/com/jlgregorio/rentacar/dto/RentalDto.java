@@ -13,9 +13,9 @@ public class RentalDto {
 
     private Date rentalDate;
 
-    private Date begin;
+    private Date rentalStart;
 
-    private Date end;
+    private Date rentalEnd;
 
     private long startKm;
 

@@ -9,23 +9,22 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+@Data
 @Entity
 @Table(name = "rentals")
-@Data
 public class RentalModel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, name = "date")
+    @Column(nullable = false, name = "rental_date")
     private Date rentalDate;
 
     @Column(nullable = false)
-    private Date begin;
+    private Date rentalStart;
 
     @Column(nullable = false)
-    private Date end;
+    private Date rentalEnd;
 
     @Column(nullable = false, name = "start_km")
     private long startKm;
@@ -55,7 +54,7 @@ public class RentalModel {
 
     public int getRentalDays(){
         long millisPorDia = 1000 * 60 * 60 * 24;
-        long diffEmMillis = end.getTime() - begin.getTime();
+        long diffEmMillis = rentalEnd.getTime() - rentalStart.getTime();
         return (int) (diffEmMillis / millisPorDia);
     }
 
