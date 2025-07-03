@@ -30,6 +30,7 @@ public class VehicleModel {
     private ManufacturerModel manufacturer;
 
     @CreationTimestamp
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

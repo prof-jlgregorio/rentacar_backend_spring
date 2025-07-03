@@ -2,7 +2,7 @@ create table rentals(
     id serial not null primary key,
     rental_date date not null,
     rental_start date not null,
-    rental_end date not null,
+    rental_end date,
     start_km integer not null,
     end_km integer null,
     hourly_rate numeric(9,2),
